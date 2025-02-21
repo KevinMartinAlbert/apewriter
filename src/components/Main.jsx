@@ -3,6 +3,7 @@ import WordDisplay from "./WordDisplay";
 import TypingArea from "./TypingArea";
 import Timer from "./Timer";
 import Stats from "./Stats";
+import Mode from "./Mode";
 import { generateText } from "../utils/textGenerator";
 
 function Main() {
@@ -10,30 +11,48 @@ function Main() {
   const [userInput, setUserInput] = useState("");
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+  const [mode, setMode] = useState("words");
+  const [timeLimit, setTimeLimit] = useState(30);
+  const [wordCount, setWordCount] = useState(5);
+  const [customText, setCustomText] = useState("");
 
   const resetTest = () => {
-    setText(generateText(5));
+    if (mode === "custom") {
+      setText(customText.trim() || "Tapez ici...");
+    } else {
+      setText(generateText(mode === "words" ? wordCount : 50)); // Nombre de mots en mode words, 50 en mode time
+    }
     setUserInput("");
     setTime(0);
     setIsRunning(false);
   };
 
   useEffect(() => {
-    setText(generateText(5));
-  }, []);
+    resetTest();
+  }, [mode, wordCount, customText]); // Réinitialisation lorsque mode, wordCount ou customText change
 
   useEffect(() => {
     if (userInput.length === 1 && !isRunning) {
       setIsRunning(true);
     }
 
-    if (userInput.length === text.length) {
+    if (mode === "words" && userInput.length === text.length) {
+      setIsRunning(false);
+    }
+
+    if (mode === "custom" && userInput.length === text.length) {
       setIsRunning(false);
     }
   }, [userInput]);
 
   return (
     <main className="main light__div">
+      <Mode
+        setMode={setMode}
+        setCustomText={setCustomText}
+        setTimeLimit={setTimeLimit}
+        setWordCount={setWordCount}
+      />
       <Timer
         isRunning={isRunning}
         setIsRunning={setIsRunning}

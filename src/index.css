@@ -112,3 +112,7 @@
 .type__and__display {
   text-align: left;
 }
+
+.mode-container {
+  display: flex;
+}

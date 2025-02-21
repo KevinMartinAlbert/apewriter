@@ -1,12 +1,17 @@
-const TypingArea = ({ userInput, setUserInput }) => {
+const TypingArea = ({ userInput, setUserInput, isDisabled }) => {
+  const handleChange = (e) => {
+    if (!isDisabled) {
+      setUserInput(e.target.value);
+    }
+  };
+
   return (
     <input
       type="text"
-      value={userInput}
-      onChange={(e) => setUserInput(e.target.value)}
-      placeholder="Commence à taper..."
-      autoFocus
       className="typing-input"
+      value={userInput}
+      onChange={handleChange}
+      disabled={isDisabled} // Désactive l'input si isDisabled est true
     />
   );
 };
