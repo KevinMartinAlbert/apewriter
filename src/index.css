@@ -18,14 +18,6 @@
   flex-direction: column;
 }
 
-.container-light {
-  background-image: url(./assets/fez-wallpaper.jpg);
-}
-
-.container-dark {
-  background-image: url(./assets/giaa.png);
-}
-
 .header, .footer, .main {
   display: flex;
   padding: 2rem;
@@ -55,18 +47,6 @@
   clip-path: polygon(0 32%, 100% 0, 100% 100%, 0% 100%);
 }
 
-.header__and__footer-text {
-  color: var(--black);
-}
-
-.light__div {
-  background-color: var(--light90);
-}
-
-.dark__div {
-  background-color: var(--dark90);
-}
-
 .margin__left-2rem {
   margin-left: 2rem;
 }
@@ -78,9 +58,8 @@
   background-color: var(--primary-light);
   color: var(--white);
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 .reset-btn:hover {
@@ -91,7 +70,6 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  text-align: center;
 }
 
 .typing-input {
@@ -106,13 +84,85 @@
   color: transparent;
   caret-color: var(--black);
   outline: none;
-  text-align: left;
-}
-
-.type__and__display {
-  text-align: left;
 }
 
 .mode-container {
   display: flex;
+}
+
+/* Mode Light */
+.light {
+  background-color: var(--white);
+  color: var(--black);
+  background-image: url(./assets/fez-wallpaper.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: 1s;
+}
+
+.light .container {
+  background-color: var(--white);
+}
+
+.light .header,
+.light .footer,
+.light .main {
+  background-color: var(--light90);
+}
+
+.light .reset-btn,
+.light .header__and__footer-text {
+  color: var(--primary-light);
+}
+
+.light .reset-btn {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.light .reset-btn:hover {
+  background-color: var(--primary-light);
+}
+
+/* Mode Dark */
+.dark {
+  background-color: var(--black);
+  color: var(--white);
+  background-image: url(./assets/giaa.png);
+  background-size: cover;
+  background-position: center;
+  transition: 1s;
+}
+
+.dark .container {
+  background-color: var(--black);
+}
+
+.dark .header,
+.dark .footer,
+.dark .main {
+  background-color: var(--dark90);
+}
+
+.dark .reset-btn,
+.dark .header__and__footer-text {
+  color: var(--primary-dark);
+}
+
+.dark .typing-input {
+  caret-color: var(--white);
+}
+
+.dark .reset-btn {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.dark .reset-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Texte erroné reste rouge en light et dark */
+.error-text {
+  color: var(--error);
 }

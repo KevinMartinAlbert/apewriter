@@ -20,7 +20,7 @@ function Main() {
     if (mode === "custom") {
       setText(customText.trim() || "Tapez ici...");
     } else {
-      setText(generateText(mode === "words" ? wordCount : 50)); // Nombre de mots en mode words, 50 en mode time
+      setText(generateText(mode === "words" ? wordCount : 50));
     }
     setUserInput("");
     setTime(0);
@@ -29,7 +29,7 @@ function Main() {
 
   useEffect(() => {
     resetTest();
-  }, [mode, wordCount, customText]); // Réinitialisation lorsque mode, wordCount ou customText change
+  }, [mode, wordCount, customText]);
 
   useEffect(() => {
     if (userInput.length === 1 && !isRunning) {

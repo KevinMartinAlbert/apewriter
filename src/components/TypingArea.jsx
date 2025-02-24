@@ -6,12 +6,12 @@ const TypingArea = ({ userInput, setUserInput, isDisabled }) => {
   };
 
   return (
-    <input
+    <textarea
       type="text"
       className="typing-input"
       value={userInput}
       onChange={handleChange}
-      disabled={isDisabled} // Désactive l'input si isDisabled est true
+      disabled={isDisabled}
     />
   );
 };

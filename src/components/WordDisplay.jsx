@@ -1,10 +1,22 @@
+import { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
+
 const WordDisplay = ({ text, userInput }) => {
+  const { theme } = useContext(ThemeContext);
+
+  const colors = {
+    correct: theme === "light" ? "var(--primary-light)" : "var(--primary-dark)",
+    incorrect: "var(--error)",
+    base: theme === "light" ? "var(--dark80)" : "var(--light80)",
+  };
+
   return (
-    <p className="type__and__display">
+    <p>
       {text.split("").map((char, index) => {
-        let color = "black";
+        let color = colors.base;
+
         if (index < userInput.length) {
-          color = userInput[index] === char ? "#0481EB" : "#D21404";
+          color = userInput[index] === char ? colors.correct : colors.incorrect;
         }
 
         return (

@@ -18,13 +18,13 @@ const Mode = ({ setMode, setCustomText, setTimeLimit, setWordCount }) => {
   };
 
   const handleTimeChange = (e) => {
-    const value = Math.max(5, Math.min(120, Number(e.target.value))); // Entre 5 et 120 sec
+    const value = Math.max(5, Math.min(120, Number(e.target.value)));
     setLocalTimeLimit(value);
     setTimeLimit(value);
   };
 
   const handleWordCountChange = (e) => {
-    const value = Math.max(1, Math.min(100, Number(e.target.value))); // Entre 1 et 100 mots
+    const value = Math.max(1, Math.min(100, Number(e.target.value)));
     setLocalWordCount(value);
     setWordCount(value);
   };

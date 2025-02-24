@@ -1,13 +1,16 @@
+import { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
+
 function Header() {
+  const { toggleTheme } = useContext(ThemeContext);
+
   return (
-    <>
-      <header className="header light__div">
-        <h1 className="header__and__footer-text">ApeWriter</h1>
-        <button className="header__and__footer-text margin__left-2rem">
-          Switch theme
-        </button>
-      </header>
-    </>
+    <header className="header">
+      <h1>ApeWriter</h1>
+      <button onClick={toggleTheme} className="margin__left-2rem">
+        Switch theme
+      </button>
+    </header>
   );
 }
 
