@@ -30,9 +30,13 @@ const Mode = ({ setMode, setCustomText, setTimeLimit, setWordCount }) => {
   };
 
   return (
-    <div className="mode-container">
+    <div className="mode-container margin__top-2rem">
       <label>mode :</label>
-      <select value={selectedMode} onChange={handleModeChange}>
+      <select
+        className="select"
+        value={selectedMode}
+        onChange={handleModeChange}
+      >
         <option value="words">words</option>
         <option value="time">time</option>
         <option value="custom">custom</option>
@@ -68,6 +72,7 @@ const Mode = ({ setMode, setCustomText, setTimeLimit, setWordCount }) => {
         <div className="custom-mode margin__left-2rem ">
           <label>custom text :</label>
           <textarea
+            className="textarea__custom"
             value={customInput}
             onChange={handleCustomTextChange}
             placeholder="your text..."

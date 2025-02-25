@@ -33,6 +33,11 @@
   clip-path: polygon(0 0, 100% 0, 100% 67%, 0% 100%);
 }
 
+h1 {
+  display: flex;
+  align-items: center;
+}
+
 .main {
   flex-direction: column;
   height: 78vh;
@@ -49,6 +54,34 @@
 
 .margin__left-2rem {
   margin-left: 2rem;
+}
+
+.margin__right-2rem {
+  margin-right: 2rem;
+}
+
+.margin__bottom-2rem {
+  margin-bottom: 2rem;
+}
+
+.margin__top-2rem {
+  margin-top: 2rem;
+}
+
+.margin__left-1rem {
+  margin-left: 1rem;
+}
+
+.margin__right-1rem {
+  margin-right: 1rem;
+}
+
+.margin__bottom-1rem {
+  margin-bottom: 1rem;
+}
+
+.margin__top-1rem {
+  margin-top: 1rem;
 }
 
 .reset-btn {
@@ -80,7 +113,6 @@
   height: 100%;
   font-size: 1rem;
   background: none;
-  border: none;
   color: transparent;
   caret-color: var(--black);
   outline: none;
@@ -88,6 +120,14 @@
 
 .mode-container {
   display: flex;
+}
+
+.select {
+  max-height: 1rem;
+}
+
+.textarea__custom {
+  max-height: 1rem;
 }
 
 /* Mode Light */
@@ -122,6 +162,16 @@
 
 .light .reset-btn:hover {
   background-color: var(--primary-light);
+}
+
+.light .select {
+  border: 1px solid var(--black);
+  transition: 1s;
+}
+
+.light .textarea__custom {
+  border: 1px solid var(--black);
+  transition: 1s;
 }
 
 /* Mode Dark */
@@ -160,6 +210,16 @@
 
 .dark .reset-btn:hover {
   background-color: var(--primary-dark);
+}
+
+.dark .select {
+  border: 1px solid var(--white);
+  transition: 1s;
+}
+
+.dark .textarea__custom {
+  border: 1px solid var(--white);
+  transition: 1s;
 }
 
 /* Texte erroné reste rouge en light et dark */

@@ -11,7 +11,7 @@ const Timer = ({ isRunning, setIsRunning, time, setTime }) => {
     return () => clearInterval(interval);
   }, [isRunning]);
 
-  return <p>⏳ Temps : {time}s</p>;
+  return <p className="margin__top-1rem">⏳ Temps : {time}s</p>;
 };
 
 export default Timer;

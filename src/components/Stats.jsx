@@ -10,7 +10,7 @@ const Stats = ({ text, userInput, time }) => {
     totalChars > 0 ? Math.round((correctChars / totalChars) * 100) : 0;
 
   return (
-    <div>
+    <div className="margin__top-1rem">
       <p>⚡ WPM : {wpm}</p>
       <p>🎯 Précision : {accuracy}%</p>
     </div>

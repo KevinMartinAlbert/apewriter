@@ -59,7 +59,7 @@ function Main() {
         time={time}
         setTime={setTime}
       />
-      <div className="typing-container">
+      <div className="typing-container margin__top-1rem">
         <WordDisplay text={text} userInput={userInput} />
         <TypingArea userInput={userInput} setUserInput={setUserInput} />
       </div>
