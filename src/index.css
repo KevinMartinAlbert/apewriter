@@ -40,6 +40,7 @@ h1 {
 
 .main {
   flex-direction: column;
+  justify-content: space-around;
   height: 78vh;
   margin-top: 1vh;
   margin-bottom: 1vh;
@@ -87,6 +88,7 @@ h1 {
 .reset-btn {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
   font-size: 1rem;
   background-color: var(--primary-light);
   color: var(--white);
@@ -110,7 +112,7 @@ h1 {
   top: 0%;
   left: 0%;
   width: 100%;
-  height: 100%;
+  height: auto;
   font-size: 1rem;
   background: none;
   color: transparent;
@@ -120,6 +122,9 @@ h1 {
 
 .mode-container {
   display: flex;
+  padding: 0.5rem 1rem;
+  clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
+  transition: 1s;
 }
 
 .select {
@@ -164,14 +169,13 @@ h1 {
   background-color: var(--primary-light);
 }
 
-.light .select {
-  border: 1px solid var(--black);
-  transition: 1s;
+.light .mode-container {
+  background-color: var(--black);
+  color: var(--white);
 }
 
-.light .textarea__custom {
-  border: 1px solid var(--black);
-  transition: 1s;
+.light .select {
+  color: var(--primary-light);
 }
 
 /* Mode Dark */
@@ -212,14 +216,13 @@ h1 {
   background-color: var(--primary-dark);
 }
 
-.dark .select {
-  border: 1px solid var(--white);
-  transition: 1s;
+.dark .mode-container {
+  background-color: var(--white);
+  color: var(--black);
 }
 
-.dark .textarea__custom {
-  border: 1px solid var(--white);
-  transition: 1s;
+.dark .select {
+  color: var(--primary-dark);
 }
 
 /* Texte erroné reste rouge en light et dark */
